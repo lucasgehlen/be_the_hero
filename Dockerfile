@@ -12,6 +12,7 @@ ARG GID=1000
 ARG PW=1234
 
 RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd
+RUN adduser ${USER} sudo
 
 # Installing essentials
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list
