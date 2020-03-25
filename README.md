@@ -29,7 +29,7 @@ docker build -t semana_omnistack_11 --build-arg USER=$USER --build-arg UID=$(id 
 # 	Criando um volume do local atual para dentro de /root/app
 #	Adicionando a network criada ao container
 # 	Abrindo as portas 3001, 3333 e 3000
-docker run -it --name semana_omnistack_11 -v /home/${USER}/app --network=node-net -p 3000:3000 -p 3001:3001 -p 3333:3333 -d semana_omnistack_11
+docker run -it --name semana_omnistack_11 -v ${PWD}:/home/${USER}/app --network=node-net -p 3000:3000 -p 3001:3001 -p 3333:3333 -d semana_omnistack_11
 
 # Abrir o container em execução usando o bash
 docker exec -it semana_omnistack_11 /bin/bash
