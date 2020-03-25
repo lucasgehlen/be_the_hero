@@ -23,13 +23,16 @@ snap install docker
 docker network create node-net --subnet=172.100.0.0/16 --gateway=172.100.0.1
 
 # Criando a imagem a partir do Dockerfile
-docker build -t semana_omnistack_11_image .
+docker build -t semana_omnistack_11 --build-arg USER=$USER --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg PW=1234 -f Dockerfile .
 
 # Criando o container a partir da imagem criada
 # 	Criando um volume do local atual para dentro de /root/app
 #	Adicionando a network criada ao container
 # 	Abrindo as portas 3001, 3333 e 3000
-docker run -it --name semana_omnistack_11 -v ${PWD}:/root/app --network=node-net -p 3000:3000 -p 3001:3001 -p 3333:3333 -d semana_omnistack_11_image
+docker run -it --name semana_omnistack_11 -v /home/${USER}/app --network=node-net -p 3000:3000 -p 3001:3001 -p 3333:3333 -d semana_omnistack_11
+
+# Abrir o container em execução usando o bash
+docker exec -it semana_omnistack_11 /bin/bash
 
 # Parando o container
 docker stop semana_omnistack_11
