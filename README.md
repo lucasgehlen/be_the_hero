@@ -59,6 +59,13 @@ docker run --name mongodb --network=node-net -p 27017:27017 -d mongo
 docker start mongodb
 
 ```
+
+#### Configurando o NPM
+```bash
+# Instalando as dependencias do node
+cd www/semanaomnistack11/aulas/backend && npm install
+cd www/semanaomnistack11/aulas/frontend && npm install 
+```
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
