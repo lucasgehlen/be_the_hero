@@ -1,7 +1,5 @@
 <div style="text-align:center"><img src="www/semanaomnistack11/aulas/mobile/src/assets/logo@3x.png" /></div>
 
-#
-
 # Be The Hero - Semana Omnistack 11	
 Be The Hero é uma aplicação web e mobile, desenvolvida utilizando Node.js, React e React Native. O projeto foi desenvolvido para a Semana Omnistack 11, promovida pela Rocketseat (https://rocketseat.com.br), que aconteceu entre os dias 23 e 29 de março de 2020 com o intuito de melhorar os conhecimentos sobre Javascript e auxiliar na busca de uma stack.
 
