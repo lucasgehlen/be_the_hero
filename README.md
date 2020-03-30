@@ -27,3 +27,23 @@ Para o desenvolvimento da aplicação, foram empregadas as seguintes tecnologias
 #### Database
 * SQLite (https://www.sqlite.org/index.html)
 * Knex (http://knexjs.org)
+
+## Resultados obtidos
+
+#### Web - Logon
+![](resources/logon.png)
+
+#### Web - Cadastro de ONG
+![](resources/cadastro.png)
+
+#### Web - Listagem de casos
+![](resources/listagem_casos.png)
+
+#### Web - Cadastro de caso
+![](resources/cadastrar_caso.png)
+
+#### Mobile - Listagem de casos
+![](resources/mobile_listagem.jpg)
+
+#### Mobile - Detalhamento do caso
+![](resources/mobile_detalhe.jpg)
