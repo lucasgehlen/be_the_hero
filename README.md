@@ -42,8 +42,18 @@ Para o desenvolvimento da aplicação, foram empregadas as seguintes tecnologias
 #### Web - Cadastro de caso
 ![](resources/cadastrar_caso.png)
 
+#### Mobile - Splash
+<img src="resources/mobile_splash.jpg" height="400em"/>
+
 #### Mobile - Listagem de casos
-![](resources/mobile_listagem.jpg)
+<img src="resources/mobile_listagem.jpg" height="400em"/>
 
 #### Mobile - Detalhamento do caso
-![](resources/mobile_detalhe.jpg)
+<img src="resources/mobile_detalhe.jpg" height="400em"/>
+
+#### Mobile - Envio de mensagem pelo WhatsApp
+<img src="resources/mobile_whatsapp.jpg" height="400em"/>
+
+#### Mobile - Envio de mensagem pelo E-mail
+<img src="resources/mobile_email.jpg" height="400em"/>
+
