@@ -1,72 +1,59 @@
-# Semana Omnistack 11 - HERO
+![](www/semanaomnistack11/aulas/frontend/src/assets/logo.svg)
 
-Nodejs and React app created to semana omnistack 11
+# Be The Hero - Semana Omnistack 11	
+Be The Hero é uma aplicação web e mobile, desenvolvida utilizando Node.js, React e React Native. O projeto foi desenvolvido para a Semana Omnistack 11, promovida pela Rocketseat (https://rocketseat.com.br), que aconteceu entre os dias 23 e 29 de março de 2020 com o intuito de melhorar os conhecimentos sobre Javascript e auxiliar na busca de uma stack.
 
-## Installation
+## Sobre o projeto
+O projeto Be The Hero tem como objetivo auxiliar 
+ONGs a divulgarem casos que necessitam de ajuda financeira. Composto por duas frentes, a aplicação conta com uma ferramenta de cadastro de ONGs e de casos via web, assim como um aplicativo para dispositivos mobile que permite que heróis apadrinhem os casos previamente cadastrados. 
 
-#### Docker
-```bash
-# Instalando Docker no Ubuntu
-snap install docker
 
-# IMPORTANTE ========
-# Caso de erro de conexão Wi-Fi após instalar o Docker se atente aos seguintes passos:
-# 	Edite /etc/NetworkManager/NetworkManager.conf
-# 	Adicione:
-#		[keyfile]
-#		unmanaged-devices=interface-name:docker0
-```
+## Tecnologias utilizadas
 
-#### Servidor
-```bash
-# Criando uma network para comunicar entre containers
-docker network create node-net --subnet=172.100.0.0/16 --gateway=172.100.0.1
+Para o desenvolvimento da aplicação, foram empregadas as seguintes tecnologias
 
-# Criando a imagem a partir do Dockerfile
-docker build -t semana_omnistack_11 --build-arg USER=$USER --build-arg UID=$(id -u) --build-arg GID=$(id -g) --build-arg PW=1234 -f Dockerfile .
+#### Backend
+* Node.js (https://nodejs.org)
+* Express (https://expressjs.com)
 
-# Criando o container a partir da imagem criada
-# 	Criando um volume do local atual para dentro de /root/app
-#	Adicionando a network criada ao container
-# 	Abrindo as portas 3001, 3333 e 3000
-docker run -it --name semana_omnistack_11 -v ${PWD}:/home/${USER}/app --network=node-net -p 3000:3000 -p 3001:3001 -p 3333:3333 -d semana_omnistack_11
+#### Frontend
+* React (https://reactjs.org)
+* Axios (https://github.com/axios/axios)
 
-# Abrir o container em execução usando o bash
-docker exec -it semana_omnistack_11 /bin/bash
+#### Mobile
+* React Native (https://reactnative.dev)
+* Expo (https://expo.io)
 
-# Parando o container
-docker stop semana_omnistack_11
+#### Database
+* SQLite (https://www.sqlite.org/index.html)
+* Knex (http://knexjs.org)
 
-# Iniciando o container usando o bash
-docker start -i semana_omnistack_11
+## Resultados obtidos
 
-# Commitando o container 
-# docker tag semana_omnistack_11 lgehlen/semana_omnistack_11:version1.0
-# docker push lgehlen/semana_omnistack_11:version1.0
-```
+#### Web - Logon
+![](resources/logon.png)
 
-#### Mongo
-```bash
-# Puxando imagem do mongodb
-docker pull mongo
+#### Web - Cadastro de ONG
+![](resources/cadastro.png)
 
-# Criando container do mongodb
-#	Adicionando a network criada ao container
-# 	Abrindo as portas 27017 (saida padrão do mongo)
-docker run --name mongodb --network=node-net -p 27017:27017 -d mongo
+#### Web - Listagem de casos
+![](resources/listagem_casos.png)
 
-# Iniciando mongodb 
-docker start mongodb
+#### Web - Cadastro de caso
+![](resources/cadastrar_caso.png)
 
-```
+#### Mobile - Splash
+<img src="resources/mobile_splash.jpg" height="400em"/>
 
-#### Configurando o NPM
-```bash
-# Instalando as dependencias do node
-cd www/semanaomnistack11/aulas/backend && npm install
-cd www/semanaomnistack11/aulas/frontend && npm install 
-```
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+#### Mobile - Listagem de casos
+<img src="resources/mobile_listagem.jpg" height="400em"/>
 
-Please make sure to update tests as appropriate.
+#### Mobile - Detalhamento do caso
+<img src="resources/mobile_detalhe.jpg" height="400em"/>
+
+#### Mobile - Envio de mensagem pelo WhatsApp
+<img src="resources/mobile_whatsapp.jpg" height="400em"/>
+
+#### Mobile - Envio de mensagem pelo E-mail
+<img src="resources/mobile_email.jpg" height="400em"/>
+

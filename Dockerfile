@@ -19,14 +19,23 @@ RUN apt-get -y upgrade
 RUN apt-get install -y build-essential
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y curl git htop man unzip vim wget bash-completion
+RUN apt-get install -y sudo
 
-# Installing nvm, npm, npx and nodejs
+# Installing nvm, npm, npx, nodejs, yarn and expo
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
+RUN npm install -g expo-cli
+
+RUN apt remove -y cmdtest
+RUN apt remove -y yarn
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt-get -y update
+RUN apt-get -y install yarn
 
 # Adding host user to docker as sudoer 
 RUN useradd -m ${USER} --uid=${UID} && echo "${USER}:${PW}" | chpasswd
-RUN apt-get install -y sudo
 RUN adduser ${USER} sudo
 
 USER ${UID}:${GID}
